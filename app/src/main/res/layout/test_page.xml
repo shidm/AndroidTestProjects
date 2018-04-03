@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/loading_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/subtitle_tv"-->
+        <!--android:background="@color/white"-->
+        <!--android:visibility="visible">-->
+
+        <!--<com.meizu.mzroottools.ui.CircleProgressBar-->
+            <!--android:layout_width="24dp"-->
+            <!--android:layout_height="24dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_above="@id/loading_tv"-->
+            <!--app:roundColor="@color/buttonClickableBackground"-->
+            <!--app:roundStartAngle="45"-->
+            <!--app:roundEndAngle="90"-->
+            <!--app:roundRotationalSpeed="5"-->
+            <!--app:roundWidth="6"-->
+            <!--app:roundBackground="@color/circleProgressBarBackground"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/loading_tv"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:textColor="#0c39df"-->
+            <!--android:textSize="15sp"-->
+            <!--android:text="正在加载"/>-->
+
+    <!--</RelativeLayout>-->
+
+</android.support.constraint.ConstraintLayout>

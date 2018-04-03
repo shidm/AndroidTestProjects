@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--按下按钮-->
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="400dp" />
+            <solid android:color="@color/buttonTouchDownBackground" />
+        </shape>
+    </item>
+
+    <!--正常显示-->
+    <item>
+        <shape>
+            <corners android:radius="400dp" />
+            <solid android:color="@color/buttonClickableBackground" />
+        </shape>
+    </item>
+</selector>
