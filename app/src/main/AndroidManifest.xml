@@ -43,6 +43,8 @@
 
         </provider>
         <activity android:name="com.sdm.ptmodule.SecondMainActivity"/>
+        <activity android:name=".TestActivity"/>
+        <activity android:name=".view.spinner.SpinnerTestActivity"/>
     </application>
 
 </manifest>

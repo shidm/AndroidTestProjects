@@ -19,12 +19,14 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.sdm.ptmodule.SecondMainActivity;
 import com.sdm.testprojects.lambda.LambdaTestActivity;
 import com.sdm.testprojects.permission.PermissionTestActivity;
 import com.sdm.testprojects.sharefunction.ShareFunctionActivity;
 import com.sdm.testprojects.socket.SocketTestActivity;
+import com.sdm.testprojects.view.spinner.SpinnerTestActivity;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Toolbar toolbar;
 
     private static final String TAG = "MainActivity";
+    private long firstTouchBack = 0l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,18 +129,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.d(TAG, "onKeyDown()"+firstTouchBack);
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             // 按下BACK，同时没有重复
-            Log.d(TAG, "onKeyDown()");
+
         }
 
-        return false;
+        return super.onKeyDown(keyCode,event);
     }
 
     // 捕获返回键的方法2
     @Override
     public void onBackPressed() {
         Log.d(TAG, "onBackPressed()");
-        super.onBackPressed();
+
+        Log.d(TAG, "firstTouchBack: "+firstTouchBack);
+        if (System.currentTimeMillis() - firstTouchBack < 2000) {
+            super.onBackPressed();
+        }else {
+            Toast.makeText(this,"再次点击退出应用",Toast.LENGTH_SHORT).show();
+            firstTouchBack = System.currentTimeMillis();
+        }
+    }
+
+    public void testActivity(View view) {
+        startActivity(new Intent(MainActivity.this, TestActivity.class));
+    }
+
+    public void jumpToSpinnerActivity(View view) {
+        startActivity(new Intent(MainActivity.this, SpinnerTestActivity.class));
     }
 }

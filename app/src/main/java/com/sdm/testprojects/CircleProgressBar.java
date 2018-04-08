@@ -10,6 +10,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.sdm.testprojects.R;
+
 import static android.graphics.Color.BLUE;
 
 /**

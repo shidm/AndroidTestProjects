@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sdm.testprojects.MainActivity"
-    android:background="#ffee00">
+    android:background="#ffee00"
+    tools:context="com.sdm.testprojects.MainActivity">
 
 
     <Button
@@ -59,18 +59,32 @@
 
     <Button
         android:id="@+id/jumptoflyme"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/button_background_test"
         android:onClick="jumpToFlymeAccount"
         android:text="jumpFunction"
-        style="?android:attr/borderlessButtonStyle"
-        android:background="@drawable/button_background_test"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/shareactivity" />
+
+    <Button
+        android:id="@+id/testActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="testActivity"
+        android:text="TestActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jumptoflyme" />
 
     <include
         android:id="@+id/include_toolbar"
@@ -113,6 +127,7 @@
         tools:ignore="MissingConstraints" />
 
     <com.sdm.testprojects.MyHeadAnimationView
+        android:id="@+id/myHeadAnimationView"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
@@ -125,6 +140,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.661" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="132dp"
+        android:layout_marginTop="8dp"
+        android:text="SpinnerTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testActivity"
+        android:onClick="jumpToSpinnerActivity"/>
 
 
 </android.support.constraint.ConstraintLayout>

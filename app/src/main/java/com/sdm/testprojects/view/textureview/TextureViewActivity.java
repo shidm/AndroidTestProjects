@@ -1,4 +1,4 @@
-package com.sdm.testprojects.textureview;
+package com.sdm.testprojects.view.textureview;
 
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
