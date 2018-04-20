@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.sdm.ptmodule.SecondMainActivity;
+import com.sdm.testprojects.json_test.JsonTestActivity;
 import com.sdm.testprojects.lambda.LambdaTestActivity;
 import com.sdm.testprojects.permission.PermissionTestActivity;
 import com.sdm.testprojects.sharefunction.ShareFunctionActivity;
@@ -49,12 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NetworkInfo.State state = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState();
         Log.d(TAG+"State", "onCreate: "+state.name());
 
-//        Intent intent = new Intent(MainActivity.this, SecondMainActivity.class);
-//        startActivity(intent);
-
-//        Intent intent1 = new Intent("com.meizu.flyme.EASY_MODE_SWITCH");
-//        intent1.setPackage("com.meizu.flyme.easylauncher");
-//        startActivity(intent1);
         init();
     }
 
@@ -158,5 +153,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void jumpToSpinnerActivity(View view) {
         startActivity(new Intent(MainActivity.this, SpinnerTestActivity.class));
+    }
+
+    public void jumpToJsonTestActivity(View view) {
+        startActivity(new Intent(MainActivity.this, JsonTestActivity.class));
     }
 }

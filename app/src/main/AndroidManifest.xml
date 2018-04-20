@@ -15,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.sdm.AndroidTestProjects" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity android:name=".permission.PermissionTestActivity">
@@ -45,6 +45,7 @@
         <activity android:name="com.sdm.ptmodule.SecondMainActivity"/>
         <activity android:name=".TestActivity"/>
         <activity android:name=".view.spinner.SpinnerTestActivity"/>
+        <activity android:name=".json_test.JsonTestActivity"/>
     </application>
 
 </manifest>

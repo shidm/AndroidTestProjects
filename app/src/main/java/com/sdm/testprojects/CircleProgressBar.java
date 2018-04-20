@@ -21,6 +21,8 @@ import static android.graphics.Color.BLUE;
 public class CircleProgressBar extends View {
 
     private int offset = 0;
+    private int mOffset = 45;
+    private boolean isProduce = false;
 
     private int roundColor, roundBackground;
     private float roundWidth;
@@ -72,7 +74,7 @@ public class CircleProgressBar extends View {
         RectF oval = new RectF(center - radius, center - radius,
                 center + radius, center + radius);
         paint.setStyle(Paint.Style.STROKE);
-        canvas.drawArc(oval, offset, 45, false, paint);
+        canvas.drawArc(oval, offset, mOffset, false, paint);
 
         //绘制进度环开头的小圆点
         paint.reset();
@@ -81,10 +83,10 @@ public class CircleProgressBar extends View {
         paint.setColor(roundColor);
         //使用三角函数时，需要把角度转为弧度
         headX = center + (int)(radius * Math.cos((double)offset/180 * Math.PI));
-        endX = center + (int)(radius * Math.cos((double) (offset + 45)/180 * Math.PI));
+        endX = center + (int)(radius * Math.cos((double) (offset + mOffset)/180 * Math.PI));
         //Log.e("degree", "degree: " + rotateDegree + "cos: " + Math.cos((double)rotateDegree/180 * Math.PI));
         headY = center + (int)(radius * Math.sin((double)offset/180 * Math.PI));
-        endY = center + (int)(radius * Math.sin((double) (offset + 45)/180 * Math.PI));
+        endY = center + (int)(radius * Math.sin((double) (offset + mOffset)/180 * Math.PI));
         canvas.drawCircle(headX, headY, roundWidth/ 2, paint);
         canvas.drawCircle(endX, endY, roundWidth/ 2, paint);
 
@@ -96,6 +98,18 @@ public class CircleProgressBar extends View {
                 } else {
                     offset = 5;
                 }
+
+//                if (mOffset == 360) {
+//                    isProduce = true;
+//                } else if (mOffset == 0){
+//                    isProduce = false;
+//                }
+//
+//                if (mOffset > 0 && isProduce) {
+//                    mOffset -=5;
+//                }else if (mOffset < 360 && !isProduce) {
+//                    mOffset += 5;
+//                }
                 postInvalidate();
             }
         },10);
